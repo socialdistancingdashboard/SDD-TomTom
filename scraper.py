@@ -34,5 +34,5 @@ pd.DataFrame(errors).to_csv("errors.csv")
 for date, group in result.groupby("date"):
     group = group.reset_index()
     group["date"] = group["date"].astype(str)
-    s3_client.put_object(Body=json.dumps(group.to_dict()),  Bucket='sdd-s3-bucket',
+    s3_client.put_object(Body=json.dumps(group.to_dict()),  Bucket='sdd-s3-basebucket',
               Key='tomtom/{}/{}/{}.json'.format(str(date.year).zfill(4), str(date.month).zfill(2), str(date.day).zfill(2)))
