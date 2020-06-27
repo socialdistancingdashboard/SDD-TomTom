@@ -5,6 +5,7 @@ from unidecode import unidecode
 import time
 from tqdm import tqdm
 import json
+import os
 
 api_key = os.environ["tomtom_key"]
 
