@@ -19,6 +19,7 @@ for x, row in tqdm(cities[:50].iterrows(), total=50):
     #print(row)
     try:
         r = requests.get("https://api.midway.tomtom.com/ranking/live/DEU%2FCircle%2F" + unidecode(row["Stadt"]).lower().replace(" ", "-") + "&key=" + api_key)
+        print(r)
         data = pd.DataFrame(r.json()["data"])
         data["city"] = row["Stadt"]
         data["lat"] = row["Lat"]
