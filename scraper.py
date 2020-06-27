@@ -6,7 +6,7 @@ import time
 from tqdm import tqdm
 import json
 
-API_KEY = os.environ["tomtom_key"]
+api_key = os.environ["tomtom_key"]
 
 s3_client = boto3.client('s3')
 cities = pd.read_csv("staedte_koordinaten_ueber_50k.CSV", sep = ";")
